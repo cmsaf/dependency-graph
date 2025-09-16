@@ -1,0 +1,22 @@
+product_id;short_name;product_type;product_family;creator;long_name;dependencies
+CM-11014;CFC;CDR;Clouds;CMSAF;Fractional Cloud Cover;
+CM-12231;BAL;CDR;Albedo;CMSAF;Blue-sky Albedo;
+CM-11314;RSF;CDR;ToA Radiation;CMSAF;TOA Reflected Solar Flux;
+CM-11264;SDL;CDR;Surface Radiation;CMSAF;Surface Downward Longwave Radiation;CFC/CDR
+CM-11293;SNL;CDR;Surface Radiation;CMSAF;Surface Net Longwave Radiation;SDL/CDR
+CM-11274;SRB;CDR;Surface Radiation;CMSAF;Surface Radiation Budget;SNL/CDR, SNS/CDR
+CM-11204;SIS;CDR;Surface Radiation;CMSAF;Surface Incoming Shortwave Radiation;CFC/CDR, RSF/CDR
+CM-11283;SNS;CDR;Surface Radiation;CMSAF;Surface Net Shortwave Radiation;SIS/CDR, BAL/CDR
+CM-6013;CFC;ICDR;Clouds;CMSAF;Fractional Cloud Cover;
+CM-6231;BAL;ICDR;Albedo;CMSAF;Blue-sky Albedo;
+CM-6333;RSF;ICDR;ToA Radiation;CMSAF;TOA Reflected Solar Flux;
+CM-6263;SDL;ICDR;Surface Radiation;CMSAF;Surface Downward Longwave Radiation;CFC/ICDR
+CM-6293;SNL;ICDR;Surface Radiation;CMSAF;Surface Net Longwave Radiation;SDL/ICDR
+CM-6273;SRB;ICDR;Surface Radiation;CMSAF;Surface Radiation Budget;SNL/ICDR, SNS/ICDR
+CM-6213;SIS;ICDR;Surface Radiation;CMSAF;Surface Incoming Shortwave Radiation;CFC/ICDR, RSF/ICDR
+CM-6283;SNS;ICDR;Surface Radiation;CMSAF;Surface Net Shortwave Radiation;SIS/ICDR, BAL/ICDR
+CM-81204;SIS;NORMAL;Anomalies;CMSAF;Normal Surface Incoming Shortwave Radiation;SIS/CDR
+CM-8213;SIS;ANOMALY;Anomalies;CMSAF;Anomaly of Surface Incoming Shortwave Radiation;SIS/ICDR, SIS/NORMAL
+Climate Monitoring over Europe on behalf of WMO;DWD;ICDR;Usage examples;EXTERNAL;(German Meteorological Service);
+Legal obligation for national climate monitoring;SMHI;ICDR;Usage examples;EXTERNAL;(Swedish Meteorological and Hydrological Institute);
+German climate attribution portal;GER;ICDR;Usage examples;EXTERNAL;(German Government);
