@@ -64,8 +64,14 @@ def get_node_shape(product_type: str) -> Tuple[str, str]:
 def get_class_def(creator: str) -> str:
     """Get class definition based on creator."""
     creator_mapping = {
+        "ACSAF": "ac",
         'CMSAF': 'cm',
+        "HSAF": "h",
+        "LSASAF": "lsa",
+        "NWCSAF": "nwc",
+        "NWPSAF": "nwp",
         'OSISAF': 'osi',
+        "ROMSAF": "rom",
         'EUMETSAT': 'eum',
         'EXTERNAL': 'ext'
     }
@@ -114,8 +120,14 @@ def generate_mermaid_diagram(products: List[Dict]) -> str:
 
     # Add class definitions
     lines.extend([
+        '    classDef ac fill:#ae8cbf, color:#000',
         '    classDef cm fill:#fece79, color:#000',
+        '    classDef h fill:#4da8ba, color:#000',
+        '    classDef lsa fill:#f79b6a, color:#000',
+        '    classDef nwc fill:#beddf2, color:#000',
+        '    classDef nwp fill:#d2c4de, color:#000',
         '    classDef osi fill:#67d0f7, color:#000',
+        '    classDef rom fill:#a3c179, color:#000',
         '    classDef eum fill:#507891, color:#000',
         '    classDef ext fill:#bbbbbb, color:#000',
         '    classDef sub fill:#f5f5f5',
