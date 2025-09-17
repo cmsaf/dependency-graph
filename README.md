@@ -9,7 +9,7 @@ Python script for auto-generating product dependency graphs using Mermaid.
    ```
    python mermaid.py myfile.csv
    ```
-3. Copy output and paste it in the [Mermaid Online Editor ](https://mermaid.live)
+3. Copy and paste output into the [Mermaid Online Editor ](https://mermaid.live)
 
 ## Example
 
