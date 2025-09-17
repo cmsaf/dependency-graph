@@ -203,3 +203,68 @@ classDef sub fill:#f5f5f5
 classDef new stroke-width:3px, font-weight:bold
 ```
 
+## General Diagram Guidelines
+
+For reference, these are the general diagram guidelines.
+
+* Products are represented by elements ("nodes") identified by their Product Identifier
+* The first text element is the Product identifier as the only mandatory element,
+  followed by the product name in the second row. Further specification can be provided
+  in the following rows as necessary.
+
+### Product categories
+
+Different product types are characterised through their shape
+
+```mermaid
+graph TD 
+data[dynamic<br>dataset]
+datarecord[(static <br> dataset)]
+
+software[[software<br>product]]
+
+other{{service<br>product}}
+```
+
+Newly proposed product commitments should use bold text and thicker box outlines
+
+```mermaid
+graph TD 
+Existing[TST-123 <br> Test V2.1 <br>operational]
+New[TST-123 <br> Test V2.2] 
+
+class New new
+classDef new font-weight:bold, stroke-width:3px;
+class Existing lsa
+class New lsa
+classDef lsa fill:#f79b6a, color:#000
+```
+
+### Connectors
+
+Relation and dependencies between products can be assigned via connectors and arrows.
+
+- **Solid arrow**: "input to"
+- **Dashed arrow**: "superseded by"
+- **Dashed arrow**: "to be discontinued"
+
+```mermaid
+flowchart LR
+
+A -- input to --> B
+
+old[Old Product] -. superseded by .-> new[New Product]
+
+olda[Old Product] -. to be discontinued .-> X((X))
+
+class new rom
+class old rom
+class olda ac
+class new new
+class X stop
+
+classDef new stroke-width:3px, font-weight:bold
+classDef rom fill:#a3c179, color:#000
+classDef ac fill:#ae8cbf, color:#000
+classDef stop fill:#ff0000
+```
