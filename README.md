@@ -13,10 +13,10 @@ Python script for auto-generating product dependency graphs using Mermaid.
 
 ## Example
 
-Here's a diagram generated from the `clara.csv` file in this repo.
-
-Note that there are no connections to usage examples. This is not supported by the
-simple data model in the Excel sheet. We'll add them manually.
+Here's a diagram generated from the `clara.csv` file in this repo. Note that there are no
+connections to usage examples. This is not supported by the simple data model in the
+Excel sheet, so we'll add them manually. We will also tweak the layout a bit by allowing
+Mermaid to make certain arrows longer (by default it tries to minimize arrow length).
 
 ```mermaid
 flowchart TD
