@@ -11,7 +11,12 @@ Python script for auto-generating product dependency graphs using Mermaid.
    ```
 3. Copy and paste output into the [Mermaid Online Editor ](https://mermaid.live)
 
-## Example
+## Examples
+
+To view the Mermaid code, click [here](https://github.com/cmsaf/dependency-graph/blob/main/README.md?plain=1).
+
+
+### Dependency Graph (auto-generated)
 
 Here's a diagram generated from the `clara.csv` file in this repo. Note that there are no
 connections to usage examples. This is not supported by the simple data model in the
@@ -113,3 +118,88 @@ flowchart TD
     class Anomalies sub
     class Usage_examples sub
 ```
+
+### Overview (created manually)
+
+```mermaid
+--- 
+title: CLARA-A Datasets
+---
+graph LR
+
+
+era5["ERA-5(T)"<br>ECMWF]:::ext
+fdr["F(C)DR<br>AVHRR/VIIRS"]:::eum
+ice_conc_tcdr[(OSI-111<br>Ice conc.)]:::osi
+ice_conc_icdr[OSI-111<br>Ice conc.]:::osi
+
+subgraph clara4[CLARA-A4]
+    direction LR
+    clara4_tcdr[(CLARA-A4 CDR<br><span style='font-size: 12px'>-Clouds<br>-Surf.Radiation<br>-Albedo<br>-ToA Radiation)]:::cm
+    clara4_icdr[CLARA-A4 ICDR]:::cm
+    clara4_normal[(CLARA-A4 Normal)]:::cm
+    clara4_anom[CLARA-A4 Anomalies]:::cm
+end
+
+clara35["CLARA-A3.5 (I)CDR & Anomalies"]:::cm
+
+subgraph applications[Application Areas]
+    direction LR
+    clim_mon[Climate Monitoring]:::ext
+    clim_change[Climate Change Analysis]:::ext
+    clim_impact[Climate Impact Analysis]:::ext
+    clim_model[Climate Modelling and Evaluation]:::ext
+    energy[Renewable Energy]:::ext
+    public[Public Sector and Government Agencies]:::ext
+end
+
+era5 -- input to --> clara4
+fdr -- input to --> clara4
+ice_conc_tcdr -- input to --> clara4
+ice_conc_icdr -- input to --> clara4
+
+clara4_tcdr -- extended by --> clara4_icdr
+clara4_tcdr -- input to --> clara4_normal
+clara4_icdr -- input to --> clara4_anom
+clara4_normal -- input to --> clara4_anom
+
+clara4 -- input to --> applications
+
+clara35 -. superseded by .-> clara4
+
+%% class definitions
+
+class clara4,applications sub
+class clara4_tcdr,clara4_icdr,clara4_normal,clara4_anom new
+
+classDef cm fill:#fece79, color:#000
+classDef osi fill:#67d0f7, color:#000
+classDef eum fill:#507891, color:#000
+classDef ext fill:#bbbbbb, color:#000
+classDef sub fill:#f5f5f5
+classDef new stroke-width:3px, font-weight:bold
+```
+
+```mermaid
+
+graph LR
+
+subgraph legend[Legend]
+    eum_legend[EUMETSAT]:::eum
+    cm_legend[CM SAF]:::cm
+    osi_legend[OSI SAF]:::osi
+    ext_legend[External]:::ext
+end
+
+%% class definitions
+
+class legend sub
+
+classDef cm fill:#fece79, color:#000
+classDef osi fill:#67d0f7, color:#000
+classDef eum fill:#507891, color:#000
+classDef ext fill:#bbbbbb, color:#000
+classDef sub fill:#f5f5f5
+classDef new stroke-width:3px, font-weight:bold
+```
+
