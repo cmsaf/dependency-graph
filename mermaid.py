@@ -13,7 +13,7 @@ def read_csv_file(filename: str) -> List[Dict]:
     """Read CSV file and return list of product dictionaries."""
     products = []
     try:
-        with open(filename, 'r', encoding='utf-8') as file:
+        with open(filename, 'r', encoding='utf-8-sig') as file:
             reader = csv.DictReader(file, delimiter=';')
             for row in reader:
                 products.append(row)
@@ -172,3 +172,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
